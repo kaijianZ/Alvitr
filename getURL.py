@@ -10,6 +10,6 @@ import re
 URL = requests.get('http://www.pixiv.net/ranking.php?mode=daily')
 
 content = URL.text
-pattern = re.compile('(?<=data-id=")\d*(?=">)')
+pattern = re.compile('(?<=data-id=")\d*(?=">)')  # regular expression for pids
 dataids = re.findall(pattern, content)
 print(dataids)
