@@ -5,11 +5,9 @@ import re
 # with open('image_name.jpg', 'wb') as handler:
 #     handler.write(img_data)
 
-# def getid(r18=False, date=''):
+def getpid():
+    URL = requests.get('http://www.pixiv.net/ranking.php?mode=daily')
 
-URL = requests.get('http://www.pixiv.net/ranking.php?mode=daily')
-
-content = URL.text
-pattern = re.compile('(?<=data-id=")\d*(?=">)')  # regular expression for pids
-dataids = re.findall(pattern, content)
-print(dataids)
+    content = URL.text
+    pattern = re.compile('(?<=data-id=")\d*(?=">)')  # regular expression for pids
+    return re.findall(pattern, content)
