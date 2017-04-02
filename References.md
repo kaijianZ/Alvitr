@@ -10,3 +10,7 @@ How to build it:
 2. https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch
 
 3. http://support.import.io/knowledgebase/articles/247570-create-a-crawler-extract-data-from-an-entire-web
+
+4. http://docs.python-requests.org/en/master/
+
+5. http://stackoverflow.com/questions/39706134/return-400-when-login-to-a-website-using-python-requests

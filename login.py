@@ -5,6 +5,9 @@ import re
 def login():
     session = requests.session()
     url = 'https://accounts.pixiv.net/login'
+
+    # to get a post_key for login
+    # check ref <5> for details
     r = session.get(url)
     pattern = re.compile('name="post_key" value="(.*?)">')
     result = pattern.findall(r.text)
@@ -20,5 +23,6 @@ def login():
         'source': 'pc',
     })
 
+    # actual login
     session.post(url, data=data)
-    return session.cookies
+    return session.cookies  # retrieve cookies
