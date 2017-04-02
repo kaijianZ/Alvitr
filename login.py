@@ -7,7 +7,7 @@ def login():
     url = 'https://accounts.pixiv.net/login'
 
     # to get a post_key for login
-    # check ref <5> for details
+    # check ref [2] for details
     r = session.get(url)
     pattern = re.compile('name="post_key" value="(.*?)">')
     result = pattern.findall(r.text)
