@@ -6,7 +6,7 @@ def login():
     session = requests.session()
     url = 'https://accounts.pixiv.net/login'
 
-    # to get a post_key for login
+    # get a post_key for login
     # check ref [2] for details
     login_page = session.get(url)
     pattern = re.compile('name="post_key" value="(.*?)">')
@@ -24,6 +24,6 @@ def login():
 
     # actual login
     session.post(url, data=data)
-    
+
     return session.cookies
     # retrieve cookies
