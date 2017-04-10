@@ -41,11 +41,11 @@ def saveimg(pids, cookies):
             # if it's Manga, do not download
 
         print(image_address)
-        img_data = requests.get(image_address, cookies=cookies, headers=header).content
         image_path = image_dir + '/' + image_name.replace('/', '_').replace('[pixiv]',
-                                                                              '') + 'pid=' + pid + image_address[-4:]
+                                                                            '') + 'pid=' + pid + image_address[-4:]
 
         if not os.path.isfile(image_path):
+            img_data = requests.get(image_address, cookies=cookies, headers=header).content
             with open(image_path, 'wb') as handler:
                 handler.write(img_data)
             # download the pics to the designated directory
