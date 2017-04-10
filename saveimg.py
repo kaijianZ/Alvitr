@@ -19,7 +19,6 @@ def mkdir():
 
 
 def saveimg(pids, cookies):
-
     image_dir = mkdir()
 
     for pid in pids:
@@ -44,8 +43,7 @@ def saveimg(pids, cookies):
         print(image_address)
         img_data = requests.get(image_address, cookies=cookies, headers=header).content
         with open(image_dir + '/' + image_title.replace('/', '_').replace(' [pixiv]',
-                                                                          '') + 'pid=' + pid + image_address[
-                                                                                               -4:],
+                                                                          '') + 'pid=' + pid + image_address[-4:],
                   'wb') as handler:
             handler.write(img_data)
             # download the pics to the designated directory
