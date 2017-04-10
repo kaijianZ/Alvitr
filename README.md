@@ -1,4 +1,6 @@
 # Alvitr
 Alvitr: pixiv crawler
 
-pixiv.py
+python pixiv.py
+
+the images will be downloaded to workingdirectory/images/20xx-xx-xx/

@@ -1,5 +1,11 @@
 import getpids
 import login
 import saveimg
+import threading
 
-saveimg.saveimg(getpids.getpids(), login.login())
+pids = getpids.getpids()
+cookies = login.login()
+
+for i in range(10):
+    t = threading.Thread(target=saveimg.saveimg, args=(pids[i * 5: i * 5 + 5], cookies))
+    t.start()
