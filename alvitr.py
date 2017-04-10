@@ -6,7 +6,7 @@ import threading
 pids = getpids.getpids()
 cookies = login.login()
 
-for i in range(10):
-    # multi-thread
-    t = threading.Thread(target=saveimg.saveimg, args=(pids[i * 5: i * 5 + 5], cookies))
+for slice in range(10):
+    t = threading.Thread(target=saveimg.saveimg, args=(pids[slice * 5: slice * 5 + 5], cookies))
     t.start()
+    # multi-thread
