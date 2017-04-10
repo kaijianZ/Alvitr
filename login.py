@@ -26,4 +26,4 @@ def login():
     session.post(url, data=data)
 
     return session.cookies
-    # retrieve cookies
+    # return cookies
