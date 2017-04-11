@@ -2,7 +2,7 @@
 pixiv crawler
 
 ## How to use:
-python pixiv.py
+`python pixiv.py`
 
 the images will be downloaded to WorkingDirectory/images/20xx-xx-xx/
 
