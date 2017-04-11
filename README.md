@@ -2,7 +2,12 @@
 a simple pixiv crawler
 
 ## How to use:
-`python pixiv.py`
+```sh
+   cd ~
+   git clone https://github.com/kaijianZ/Alvitr.git ~/
+   cd ./Alvitr
+   python ./alvitr.py
+```
 
 the images will be downloaded to WorkingDirectory/images/20xx-xx-xx/
 
