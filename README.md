@@ -1,5 +1,5 @@
 # Alvitr
-pixiv crawler
+a simple pixiv crawler
 
 ## How to use:
 `python pixiv.py`
