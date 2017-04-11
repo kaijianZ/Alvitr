@@ -4,7 +4,7 @@ a simple pixiv crawler
 ## How to use:
 ```sh
    cd ~
-   git clone https://github.com/kaijianZ/Alvitr.git ~/
+   git clone https://github.com/kaijianZ/Alvitr.git
    cd ./Alvitr
    python ./alvitr.py
 ```
