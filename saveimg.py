@@ -11,15 +11,19 @@ header = ({
 })
 
 
-def mkdir():
-    path_today = 'images/' + str(datetime.date.today())
-    if not os.path.exists(path_today):  # create the directory if it doesn't exist
-        os.makedirs(path_today)
-    return path_today
+def mkdir(date="", tag=""):
+    if len(date):
+        path = 'images/' + date
+    elif len(tag):
+        path = 'images/' + tag
+    else:
+        path = 'images/' + str(datetime.date.today())
+    if not os.path.exists(path):  # create the directory if it doesn't exist
+        os.makedirs(path)
+    return path
 
 
-def saveimg(pids, cookies):
-    image_dir = mkdir()
+def saveimg(pids, cookies, image_dir):
 
     for pid in pids:
         # get the actual URL of the pictures
