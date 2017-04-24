@@ -2,26 +2,28 @@
 a simple pixiv crawler
 
 ## How to use:
-```sh
-   cd ~
-   git clone https://github.com/kaijianZ/Alvitr.git
-   cd ./Alvitr
-   
-   python ./alvitr.py
-   python ./alvitr.py date 2017-01-01
-   python ./alvitr.py tag 南ことり
-```
 Request package is required.
+```sh
+$ pip install requests
+$ cd ~
+$ git clone https://github.com/kaijianZ/Alvitr.git
+$ cd ./Alvitr
+
+$ python ./alvitr.py
+$ python ./alvitr.py date 2017-01-01
+$ python ./alvitr.py tag 南ことり
+```
+
 
 the images will be downloaded to
  
-WorkingDirectory/images/20xx-xx-xx/ if specific
+_Alvitr/images/20xx-xx-xx/_ if specific
 date is given
  
-WorkingDirectory/images/20xx-xx-xx/ when no argument 
+_Alvitr/images/20xx-xx-xx/_ when no argument 
 __NOTE: the date is today__
 
-WorkingDirectory/images/your_tag/ if specific tag is given
+_Alvitr/images/your_tag/_ if specific tag is given
 
 
 ## Idea
