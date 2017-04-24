@@ -13,8 +13,13 @@ a simple pixiv crawler
 ```
 Request package is required.
 
-the images will be downloaded to WorkingDirectory/images/20xx-xx-xx/ if specific
-date is given or today's list will be downloaded when no argument
+the images will be downloaded to
+ 
+WorkingDirectory/images/20xx-xx-xx/ if specific
+date is given
+ 
+WorkingDirectory/images/20xx-xx-xx/ when no argument 
+__NOTE: the date is today__
 
 WorkingDirectory/images/your_tag/ if specific tag is given
 
