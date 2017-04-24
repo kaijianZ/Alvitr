@@ -11,14 +11,14 @@ class Daily(object):
         self.date = date
 
     def get_pids(self):
+        date_url = ''
         if len(self.date):
             year, month, day = self.date.split('-')
             if datetime.date(year=int(year), month=int(month), day=int(day)) < datetime.date.today():
                 date_url = "&date=" + year + month + day
             else:
-                date_url = ''
-        else:
-            date_url = ''
+                self.date = str(datetime.date.today())
+
         daily_list_page = requests.get('http://www.pixiv.net/ranking.php?mode=daily' + date_url)
         pattern = re.compile('data-id="(\d*)">')
         # regular expression for pids of daily pics

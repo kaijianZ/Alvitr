@@ -20,7 +20,7 @@ the images will be downloaded to
 _Alvitr/images/20xx-xx-xx/_ if specific
 date is given
  
-_Alvitr/images/20xx-xx-xx/_ when no argument 
+_Alvitr/images/20xx-xx-xx/_ when no argument or the given date is in the future
 __NOTE: the date is today__
 
 _Alvitr/images/your_tag/_ if specific tag is given
