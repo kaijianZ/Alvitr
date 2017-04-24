@@ -1,6 +1,8 @@
-import requests
-import re
 import datetime
+import re
+
+import requests
+
 import saveimg
 
 
@@ -21,7 +23,18 @@ class Daily(object):
         pattern = re.compile('data-id="(\d*)">')
         # regular expression for pids of daily pics
 
-        return pattern.findall(daily_list_page.text), saveimg.mkdir(self.date)
+        return pattern.findall(daily_list_page.text), saveimg.mkdir(date=self.date)
         # return the pids
 
-# def getpids_tag():
+
+class Tag(object):
+    def __init__(self, tag=""):
+        self.tag = tag
+
+    def get_pids(self):
+        tag_list_page = requests.get('https://www.pixiv.net/search.php?s_mode=s_tag_full&word=' + self.tag)
+        pattern = re.compile('data-id="(\d*)"')
+        # regular expression for pids of popular pics of specific tag
+
+        return list(set(pattern.findall(tag_list_page.text))), saveimg.mkdir(tag=self.tag)
+        # avoid duplicate pid

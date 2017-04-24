@@ -1,7 +1,8 @@
-import requests
-import re
-import os
 import datetime
+import os
+import re
+
+import requests
 
 user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/\
 537.36'
@@ -24,7 +25,6 @@ def mkdir(date="", tag=""):
 
 
 def saveimg(pids, cookies, image_dir):
-
     for pid in pids:
         # get the actual URL of the pictures
         image_page = requests.get('http://www.pixiv.net/member_illust.php?mode=medium&illust_id=' + pid,
@@ -52,4 +52,4 @@ def saveimg(pids, cookies, image_dir):
             img_data = requests.get(image_address, cookies=cookies, headers=header).content
             with open(image_path, 'wb') as handler:
                 handler.write(img_data)
-            # download the pics to the designated directory
+                # download the pics to the designated directory
