@@ -10,7 +10,7 @@ class Daily(object):
 
     def get_pids(self):
         if len(self.date):
-            year, month, day = date.split('-')
+            year, month, day = self.date.split('-')
             if datetime.date(year=int(year), month=int(month), day=int(day)) < datetime.date.today():
                 date_url = "&date=" + year + month + day
             else:
