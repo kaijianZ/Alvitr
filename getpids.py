@@ -6,7 +6,12 @@ import requests
 import saveimg
 
 
-class Daily(object):
+class Downloader(object):
+    def get_pids(self):
+        pass
+
+
+class Daily(Downloader):
     def __init__(self, date=""):
         self.date = date
 
@@ -27,7 +32,7 @@ class Daily(object):
         # return the pids
 
 
-class Tag(object):
+class Tag(Downloader):
     def __init__(self, tag=""):
         self.tag = tag
 

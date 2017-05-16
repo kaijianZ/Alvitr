@@ -1,8 +1,9 @@
-import requests
 import re
 
+import requests
 
-def login():
+
+def login(id, password):
     session = requests.session()
     url = 'https://accounts.pixiv.net/login'
 
@@ -14,8 +15,8 @@ def login():
     post_key = result[0]
 
     data = ({
-        'pixiv_id': "chimoe",
-        'password': "opensource",
+        'pixiv_id': id,
+        'password': password,
         'captcha': '',
         'g_recaptcha_response': '',
         'post_key': post_key,
@@ -25,5 +26,8 @@ def login():
     # actual login
     session.post(url, data=data)
 
-    return session.cookies
+    login_fail_flag = re.compile('イラストコミュニケーションサービス')
+    login_success = not len(login_fail_flag.findall(session.get("https://www.pixiv.net").text))
+
+    return login_success, session.cookies
     # return cookies

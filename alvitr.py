@@ -17,10 +17,21 @@ if __name__ == "__main__":
         alvitr = getpids.Daily()
     # determine the download method by given argument
 
+    while 1:
+        id = input("id: ");
+        password = input("password: ")
+
+        loginSuccess, cookies = login.login(id, password)
+        if loginSuccess:
+            break
+        elif len(id) == 0 and len(password) == 0:
+            exit()
+        else:
+            print("Login failed. Please retry:")
+
     pids, image_dir = alvitr.get_pids()
     print(len(pids), 'pids retrieved')
 
-    cookies = login.login()
     print('cookies retrieved')
 
     slice_size = int(len(pids) / 10 + 0.5)
