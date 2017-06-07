@@ -17,6 +17,8 @@ class Daily(Downloader):
 
     def get_pids(self):
         date_url = ''
+        # date_url being empty means show today's result
+
         if len(self.date):
             year, month, day = self.date.split('-')
             if datetime.date(year=int(year), month=int(month), day=int(day)) < datetime.date.today():
