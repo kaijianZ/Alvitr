@@ -18,7 +18,7 @@ if __name__ == "__main__":
     # determine the download method by given argument
 
     while 1:
-        id = input("id: ");
+        id = input("id: ")
         password = input("password: ")
 
         loginSuccess, cookies = login.login(id, password)

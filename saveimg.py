@@ -19,8 +19,9 @@ def mkdir(date="", tag=""):
         path = 'images/' + tag
     else:
         path = 'images/' + str(datetime.date.today())
-    if not os.path.exists(path):  # create the directory if it doesn't exist
+    if not os.path.exists(path):
         os.makedirs(path)
+        # create the directory if it doesn't exist
     return path
 
 
@@ -40,11 +41,12 @@ def saveimg(pids, cookies, image_dir):
 
         if len(image_address):
             image_address = image_address[0]
+            print(image_address)
         else:
+            print('Skip downloading Manga!')
             continue
             # if it's Manga, do not download
 
-        print(image_address)
         image_path = image_dir + '/' + image_name.replace('/', '_').replace('[pixiv]',
                                                                             '') + 'pid=' + pid + image_address[-4:]
 
