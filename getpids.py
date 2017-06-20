@@ -35,7 +35,7 @@ class Daily(Downloader):
 
 
 class Tag(Downloader):
-    def __init__(self, tag=""):
+    def __init__(self, tag):
         self.tag = tag
 
     def get_pids(self):
