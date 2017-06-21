@@ -34,10 +34,9 @@ if __name__ == "__main__":
 
     print('cookies retrieved')
 
-    slice_size = int(len(pids) / 10 + 0.5)
-
-    for SLICE in range(10):
+    while len(pids):
         t = threading.Thread(target=saveimg.saveimg,
-                             args=(pids[SLICE * slice_size: SLICE * slice_size + slice_size], cookies, image_dir))
+                             args=(pids[0:10], cookies, image_dir))
+        pids = pids[10:]
         t.start()
         # multi-thread
