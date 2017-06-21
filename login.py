@@ -27,7 +27,8 @@ def login(id, password):
     session.post(url, data=data)
 
     login_fail_flag = re.compile('イラストコミュニケーションサービス')
-    login_success = not len(login_fail_flag.findall(session.get("https://www.pixiv.net").text))
+    login_success = not len(
+        login_fail_flag.findall(session.get("https://www.pixiv.net").text))
 
     return login_success, session.cookies
     # return cookies

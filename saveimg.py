@@ -28,12 +28,15 @@ def mkdir(date="", tag=""):
 def saveimg(pids, cookies, image_dir):
     for pid in pids:
         # get the actual URL of the pictures
-        image_page = requests.get('http://www.pixiv.net/member_illust.php?mode=medium&illust_id=' + pid,
-                                  cookies=cookies)
-        pattern_image_address = re.compile('data-src="(.*?)" class="original-image">')
+        image_page = requests.get(
+            'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=' + pid,
+            cookies=cookies)
+        pattern_image_address = re.compile(
+            'data-src="(.*?)" class="original-image">')
         # regular expression for pics' address
 
-        pattern_image_title = re.compile('<meta property="og:title" content="(.*?)">')
+        pattern_image_title = re.compile(
+            '<meta property="og:title" content="(.*?)">')
         # regular expression for pics' title
 
         image_address = pattern_image_address.findall(image_page.text)
@@ -47,11 +50,13 @@ def saveimg(pids, cookies, image_dir):
             continue
             # if it's Manga, do not download
 
-        image_path = image_dir + '/' + image_name.replace('/', '_').replace('[pixiv]',
-                                                                            '') + 'pid=' + pid + image_address[-4:]
+        image_path = image_dir + '/' + image_name.replace('/', '_').replace(
+            '[pixiv]',
+            '') + 'pid=' + pid + image_address[-4:]
 
         if not os.path.isfile(image_path):
-            img_data = requests.get(image_address, cookies=cookies, headers=header).content
+            img_data = requests.get(image_address, cookies=cookies,
+                                    headers=header).content
             with open(image_path, 'wb') as handler:
                 handler.write(img_data)
                 # download the pics to the designated directory
